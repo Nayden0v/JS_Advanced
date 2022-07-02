@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button style="width:16em" class="btn">Press me</button>
+
+    <script>
+    const button = document.querySelector(".btn");
+    
+    function welcome(){
+        let name = prompt('What is your name?');
+       if (name == "") { 
+        alert("Please enter a name!");
+       }else{
+        alert(`Hello ${name}, nice to see you!`);
+       }
+        let heading = document.createElement('h1');
+        document.body.append(heading);
+        heading.style.color='red';
+        heading.innerHTML = `Welcome, ${name}!`;
+
+        setTimeout(() => {
+        heading.style.color='blue';
+        heading.innerHTML = `How are you today?`;
+        }, "3000")
+
+
+        setTimeout(() => {
+        let input1 = document.createElement('button');
+        let input2 = document.createElement('button');
+        let resetBtn = document.createElement('button');
+        // let a = "https://youtu.be/YitoAIyUNd0";
+        let loc = ('<a href=' + "https://youtu.be/YitoAIyUNd0" + 'target="_blank">this</a>')
+        document.body.append(input1);
+        input1.textContent="Good"
+        document.body.append(input2);
+        input2.textContent="Bad"
+        document.body.append(resetBtn);
+        resetBtn.textContent="Reset"
+
+        input1.addEventListener('click', function(){
+            heading.innerHTML = "Awsome!";
+            heading.style.color='blue';
+            input1.parentNode.removeChild(input1);
+            input2.parentNode.removeChild(input2);
+            
+        })
+        input2.addEventListener('click', function(){
+            heading.innerHTML = `Do you wanna check ${loc} funny video to get better?`
+            heading.style.color='blue';
+            input1.parentNode.removeChild(input1);
+            input2.parentNode.removeChild(input2);
+        })
+        resetBtn.addEventListener('click', function(){
+            resetBtn.parentNode.removeChild(resetBtn);
+            input1.parentNode.removeChild(input1);
+            input2.parentNode.removeChild(input2);
+            heading.innerHTML="";
+        })
+        }, "3500")
+    
+    }
+    
+    button.addEventListener('click', welcome);
+    </script>
+</body>
+
+</html>

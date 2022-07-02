@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Car brands</h1>
+    <input class="input" type="text" placeholder="Enter brand here"></input>
+    <button>Add brand</button>
+    <button class="clear">Clear</button><br/><br/>
+    <ul id="brandList"></ul>
+
+
+<script>
+let inputBrand = document.querySelector(`.input`)
+let btn = document.querySelector(`button`)
+let btnClear = document.querySelector(`.clear`)
+
+const brandCreator = function(){
+    if(inputBrand.value === ""){
+      alert("Please enter a brand")
+    }else{
+  let brand =  document.createElement("li");
+  const brandList = document.querySelector(`#brandList`);
+  brandList.insertBefore(brand, brandList.firstChild);
+  brand.innerHTML = inputBrand.value;
+  inputBrand.value = "";
+  inputBrand.focus();
+    }
+}
+
+
+btn.addEventListener("click", brandCreator)
+btn.addEventListener("keyup", brandCreator)
+btnClear.addEventListener("click", brandRemover)
+</script>
+
+</body>
+</html>

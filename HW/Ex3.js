@@ -124,33 +124,55 @@
 
 /*-----------------------------------------Objects and Functions---------------------------------------------*/
 
-let devFactory = function(name, salary){
-  let obj = {};
+// let devFactory = function(name, salary){
+//   let obj = {};
 
-  obj.name = name;
-  obj.salary = salary;
-  obj.getSalary = function(){
-    return salary;
-  }
-  obj.increaseSalary = function(incrValue, pass){
-    if(pass == "somersby"){
-      // incrValue += salary
-      salary += incrValue;
-      console.log(salary);
-    return salary;
+//   obj.name = name;
+//   obj.salary = salary;
+//   obj.getSalary = function(){
+//     return salary;
+//   }
+//   obj.increaseSalary = function(incrValue, pass){
+//     if(pass == "somersby"){
+//       salary += incrValue;
+//       // console.log(salary);
+//     return salary;
     
-    }else{
-      console.log('Wrong pass!');
-    }
+//     }else{
+//       incrValue = `is still: ${salary}`;
+//       return incrValue;
+//     }
 
-  }
+//   }
   
-  return obj;
-}
+//   return obj;
+// }
 
-let dev1 = devFactory('Ivan', 1500);
-// console.log(`${dev1.name} salary is ${dev1.getSalary()}`);
-dev1.increaseSalary(500,"somersby");
+// let dev1 = devFactory('Ivan', 1500);
+// console.log(`${dev1.name} salary is ${dev1.increaseSalary(500,"somersby")}`);
+
+// function DevFactory(name,salary){
+//   {
+//     this.name = name;
+//     this.salary = salary;
+//     this.increaseSalary = function(incrValue, pass){
+//           if(pass == "somersby"){
+//             return `increased to ${salary += incrValue}`;
+//           }else{
+//             return `still: ${salary}`;
+//    }
+//   }
+//  }
+// }
+
+// let dev1 = new DevFactory("Petkan",5000);
+// dev1.salary = 4000;
+// console.log(dev1.salary);
+
+// console.log(`${dev1.name} salary is ${dev1.increaseSalary(500,'sommersby')}`);
+
+
+
 
 // let AppleConstructor = function( color, prices ){
 //   console.log("AppleConstructor is called!");

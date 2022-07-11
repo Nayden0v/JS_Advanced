@@ -14,4 +14,4 @@ const counter = {
 	}
 }
 
-//countdown(3);
+countdown(3);

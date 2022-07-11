@@ -34,4 +34,4 @@ if (this.hours >= 24)
 };
 var clock = new my_Clock();
   clock.run();
-  
+  //nothing

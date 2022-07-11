@@ -263,7 +263,7 @@
 
 // console.log(cube(2));
 
-let x =1,y=2;
+
 
 
 

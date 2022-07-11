@@ -9,7 +9,7 @@ const counter = {
  function countdown(times) {
 	const delay = 1000;
 	while(times){
-		setTimeout(() => {counter.tick()}, delay*times);
+		setTimeout(counter.tick.bind(counter), delay*times);
 		times--;
 	}
 }

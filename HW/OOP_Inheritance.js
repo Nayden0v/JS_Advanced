@@ -12,9 +12,12 @@ Person.prototype.greet = function(){
 /* --------------------------- Manager constructor -------------------------- */
 function Manager(name, age, managed){
 Person.call(this,name,age);
-this.managed = ["",""]
+this.managed = managed
 }
 Manager.prototype = Object.create(Person.prototype);
+Manager.prototype.greet = function(){
+  console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old I managed ${this.managed}`);
+}
 
 
 /* -------------------------- Developer constructor ------------------------- */
@@ -33,7 +36,7 @@ let maria = new Developer('Maria Popova', 23, ['Python', 'Machine Learning']);
 let pesho = new Developer('Petar Petrov', 19, ['JavaScript', 'Angular', 'React', 'Vue']);
 
 // Manager instances
-let gates = new Manager('Bill Gates', 43, [maria, pesho]);
+let gates = new Manager('Bill Gates', 43, ["maria", "pesho"]);
 
 /* ----------------------------- Use the objects ---------------------------- */
 maria.greet();

@@ -263,7 +263,23 @@
 
 // console.log(cube(2));
 
+class Person {
 
+    name;
+  
+    constructor(name) {
+      this.name = name;
+    }
+  
+    introduceSelf() {
+      console.log(`Hi! I'm ${this.name}`);
+    }
+  
+  }
+
+  const hoot = new Person("Petkan");
+
+  hoot.introduceSelf();
 
 
 
